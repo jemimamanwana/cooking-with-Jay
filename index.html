@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking with Jay | World Flavors in Your Kitchen</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@200;300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="preloader-text">Cooking with Jay</div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">Cooking with Jay</span>
+                    <span class="logo-sub">World Flavors</span>
+                </div>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="cuisines.html" class="nav-link">Cuisines</a></li>
+                <li class="nav-item"><a href="cookbook.html" class="nav-link">My Cookbook</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search recipes..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-bg-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&h=900&fit=crop&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600&h=900&fit=crop&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=1600&h=900&fit=crop&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=1600&h=900&fit=crop&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=1600&h=900&fit=crop&q=80')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <!-- Floating food decorations -->
+        <div class="hero-floaters">
+            <span class="floater floater-1"><i class="fas fa-pepper-hot"></i></span>
+            <span class="floater floater-2"><i class="fas fa-leaf"></i></span>
+            <span class="floater floater-3"><i class="fas fa-seedling"></i></span>
+            <span class="floater floater-4"><i class="fas fa-lemon"></i></span>
+            <span class="floater floater-5"><i class="fas fa-apple-whole"></i></span>
+            <span class="floater floater-6"><i class="fas fa-carrot"></i></span>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <i class="fas fa-fire"></i>
+                <span>Over 500+ Authentic Recipes</span>
+            </div>
+            <h1 class="hero-title reveal-up">
+                <span class="hero-title-line">Discover the Art of</span>
+                <span class="hero-title-accent">
+                    <span class="typed-text" id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </span>
+            </h1>
+            <p class="hero-subtitle reveal-up">Journey through the world's most extraordinary flavors, handcrafted recipes, and culinary secrets passed down through generations.</p>
+            <div class="hero-buttons reveal-up">
+                <a href="recipes.html" class="btn btn-primary btn-magnetic">
+                    <span>Explore Recipes</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="cookbook.html" class="btn btn-glass btn-magnetic">
+                    <span>My Cookbook</span>
+                    <i class="fas fa-book-open"></i>
+                </a>
+            </div>
+            <div class="hero-trust reveal-up">
+                <div class="hero-avatars">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User">
+                </div>
+                <div class="hero-trust-text">
+                    <strong>10,000+</strong> home cooks already joined
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll" id="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+
+        <!-- Hero bottom wave -->
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg-color)"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Stats Counter Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-card reveal-up">
+                <div class="stat-icon"><i class="fas fa-utensils"></i></div>
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Recipes</div>
+            </div>
+            <div class="stat-card reveal-up">
+                <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Cuisines</div>
+            </div>
+            <div class="stat-card reveal-up">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number" data-target="10000">0</div>
+                <div class="stat-label">Home Cooks</div>
+            </div>
+            <div class="stat-card reveal-up">
+                <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                <div class="stat-number" data-target="25000">0</div>
+                <div class="stat-label">Recipes Saved</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Recipes -->
+    <section class="featured-recipes" id="featured">
+        <div class="section-header reveal-up">
+            <span class="section-tag"><i class="fas fa-star"></i> Handpicked</span>
+            <h2>Featured Recipes</h2>
+            <p>Our most loved dishes, curated just for you</p>
+        </div>
+
+        <div class="recipe-carousel-wrapper">
+            <div class="recipe-carousel" id="recipe-carousel">
+                <div class="recipe-card tilt-card reveal-up">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop&q=80')">
+                        <div class="recipe-image-overlay"></div>
+                        <div class="recipe-tag">Italian</div>
+                        <button class="save-recipe" aria-label="Save recipe"><i class="far fa-bookmark"></i></button>
+                        <div class="recipe-time-badge"><i class="fas fa-clock"></i> 45 min</div>
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-difficulty" data-level="medium">Medium</div>
+                        <h3>Classic Margherita Pizza</h3>
+                        <p class="recipe-desc">Hand-tossed dough with San Marzano tomatoes, fresh mozzarella, and basil</p>
+                        <div class="recipe-footer">
+                            <div class="recipe-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.5 (128)</span>
+                            </div>
+                            <a href="recipes.html" class="recipe-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card tilt-card reveal-up">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800&h=600&fit=crop&q=80')">
+                        <div class="recipe-image-overlay"></div>
+                        <div class="recipe-tag">Japanese</div>
+                        <button class="save-recipe" aria-label="Save recipe"><i class="far fa-bookmark"></i></button>
+                        <div class="recipe-time-badge"><i class="fas fa-clock"></i> 60 min</div>
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-difficulty" data-level="hard">Hard</div>
+                        <h3>Dragon Roll Sushi</h3>
+                        <p class="recipe-desc">Tempura shrimp, avocado, and eel sauce wrapped in perfectly seasoned rice</p>
+                        <div class="recipe-footer">
+                            <div class="recipe-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>4.0 (76)</span>
+                            </div>
+                            <a href="recipes.html" class="recipe-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card tilt-card reveal-up">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1559314809-0d155014e29e?w=800&h=600&fit=crop&q=80')">
+                        <div class="recipe-image-overlay"></div>
+                        <div class="recipe-tag">Thai</div>
+                        <button class="save-recipe" aria-label="Save recipe"><i class="far fa-bookmark"></i></button>
+                        <div class="recipe-time-badge"><i class="fas fa-clock"></i> 30 min</div>
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-difficulty" data-level="medium">Medium</div>
+                        <h3>Authentic Pad Thai</h3>
+                        <p class="recipe-desc">Stir-fried rice noodles with tamarind sauce, peanuts, and fresh lime</p>
+                        <div class="recipe-footer">
+                            <div class="recipe-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (95)</span>
+                            </div>
+                            <a href="recipes.html" class="recipe-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card tilt-card reveal-up">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop&q=80')">
+                        <div class="recipe-image-overlay"></div>
+                        <div class="recipe-tag">Mexican</div>
+                        <button class="save-recipe" aria-label="Save recipe"><i class="far fa-bookmark"></i></button>
+                        <div class="recipe-time-badge"><i class="fas fa-clock"></i> 25 min</div>
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-difficulty" data-level="easy">Easy</div>
+                        <h3>Street-Style Chicken Tacos</h3>
+                        <p class="recipe-desc">Cilantro-lime chicken with pickled onions, salsa verde, and cotija cheese</p>
+                        <div class="recipe-footer">
+                            <div class="recipe-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0 (210)</span>
+                            </div>
+                            <a href="recipes.html" class="recipe-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card tilt-card reveal-up">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=600&fit=crop&q=80')">
+                        <div class="recipe-image-overlay"></div>
+                        <div class="recipe-tag">French</div>
+                        <button class="save-recipe" aria-label="Save recipe"><i class="far fa-bookmark"></i></button>
+                        <div class="recipe-time-badge"><i class="fas fa-clock"></i> 90 min</div>
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-difficulty" data-level="hard">Hard</div>
+                        <h3>Layered Chocolate Gateau</h3>
+                        <p class="recipe-desc">Velvety dark chocolate layers with ganache frosting and fresh berries</p>
+                        <div class="recipe-footer">
+                            <div class="recipe-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span>4.7 (183)</span>
+                            </div>
+                            <a href="recipes.html" class="recipe-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card tilt-card reveal-up">
+                    <div class="recipe-image" style="background-image: url('https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=600&fit=crop&q=80')">
+                        <div class="recipe-image-overlay"></div>
+                        <div class="recipe-tag">American</div>
+                        <button class="save-recipe" aria-label="Save recipe"><i class="far fa-bookmark"></i></button>
+                        <div class="recipe-time-badge"><i class="fas fa-clock"></i> 20 min</div>
+                    </div>
+                    <div class="recipe-info">
+                        <div class="recipe-difficulty" data-level="easy">Easy</div>
+                        <h3>Fluffy Blueberry Pancakes</h3>
+                        <p class="recipe-desc">Buttermilk pancakes bursting with blueberries, drizzled with maple syrup</p>
+                        <div class="recipe-footer">
+                            <div class="recipe-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>4.9 (256)</span>
+                            </div>
+                            <a href="recipes.html" class="recipe-link">View <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-btn carousel-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots" id="carousel-dots"></div>
+                <button class="carousel-btn carousel-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="section-header reveal-up">
+            <span class="section-tag"><i class="fas fa-magic"></i> Simple Steps</span>
+            <h2>How It Works</h2>
+            <p>From browsing to cooking in three easy steps</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-line"></div>
+            <div class="step reveal-left">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="fas fa-search"></i></div>
+                <div class="step-content">
+                    <h3>Discover</h3>
+                    <p>Browse hundreds of authentic recipes from every corner of the world. Filter by cuisine, difficulty, or cooking time.</p>
+                </div>
+            </div>
+            <div class="step reveal-right">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="fas fa-bookmark"></i></div>
+                <div class="step-content">
+                    <h3>Save & Organize</h3>
+                    <p>Build your personal cookbook. Save favorites, create collections, and plan your weekly meals effortlessly.</p>
+                </div>
+            </div>
+            <div class="step reveal-left">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="fas fa-fire-burner"></i></div>
+                <div class="step-content">
+                    <h3>Cook & Share</h3>
+                    <p>Follow step-by-step instructions, master new techniques, and share your culinary creations with the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore by Region -->
+    <section class="explore-regions">
+        <div class="section-header reveal-up">
+            <span class="section-tag"><i class="fas fa-globe-americas"></i> World Tour</span>
+            <h2>Explore by Region</h2>
+            <p>Taste the world without leaving your kitchen</p>
+        </div>
+
+        <div class="region-showcase">
+            <div class="region-card region-large reveal-up" style="background-image: url('https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=1200&h=800&fit=crop&q=80')">
+                <div class="region-overlay"></div>
+                <div class="region-content">
+                    <span class="region-flag">&#127471;&#127477;</span>
+                    <h3>Asian Cuisine</h3>
+                    <p>128 Recipes</p>
+                    <a href="cuisines.html?region=asian" class="region-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="region-card reveal-up" style="background-image: url('https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=800&h=600&fit=crop&q=80')">
+                <div class="region-overlay"></div>
+                <div class="region-content">
+                    <span class="region-flag">&#127470;&#127481;</span>
+                    <h3>European</h3>
+                    <p>96 Recipes</p>
+                    <a href="cuisines.html?region=european" class="region-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="region-card reveal-up" style="background-image: url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&h=600&fit=crop&q=80')">
+                <div class="region-overlay"></div>
+                <div class="region-content">
+                    <span class="region-flag">&#127474;&#127485;</span>
+                    <h3>Americas</h3>
+                    <p>87 Recipes</p>
+                    <a href="cuisines.html?region=american" class="region-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="region-card reveal-up" style="background-image: url('https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=1200&h=800&fit=crop&q=80')">
+                <div class="region-overlay"></div>
+                <div class="region-content">
+                    <span class="region-flag">&#127475;&#127468;</span>
+                    <h3>African</h3>
+                    <p>64 Recipes</p>
+                    <a href="cuisines.html?region=african" class="region-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="region-card reveal-up" style="background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&h=600&fit=crop&q=80')">
+                <div class="region-overlay"></div>
+                <div class="region-content">
+                    <span class="region-flag">&#127474;&#127462;</span>
+                    <h3>Mediterranean</h3>
+                    <p>72 Recipes</p>
+                    <a href="cuisines.html?region=mediterranean" class="region-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe of the Day -->
+    <section class="recipe-spotlight">
+        <div class="spotlight-bg" style="background-image: url('https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=1600&h=900&fit=crop&q=80')"></div>
+        <div class="spotlight-overlay"></div>
+        <div class="spotlight-content reveal-up">
+            <span class="spotlight-badge"><i class="fas fa-crown"></i> Recipe of the Day</span>
+            <h2>Spicy Thai Green Curry</h2>
+            <p>A vibrant and aromatic curry with coconut milk, fresh vegetables, and your choice of protein. This authentic Thai dish balances spicy, sweet, and savory flavors perfectly.</p>
+            <div class="spotlight-meta">
+                <span><i class="fas fa-clock"></i> 40 min</span>
+                <span><i class="fas fa-signal"></i> Medium</span>
+                <span><i class="fas fa-globe-asia"></i> Thai</span>
+                <span><i class="fas fa-star"></i> 4.8</span>
+            </div>
+            <a href="recipes.html" class="btn btn-primary btn-magnetic">
+                <span>View Full Recipe</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Seasonal Specials -->
+    <section class="seasonal-specials">
+        <div class="section-header reveal-up">
+            <span class="section-tag"><i class="fas fa-sun"></i> This Season</span>
+            <h2>Seasonal Specials</h2>
+            <p>Recipes perfect for this time of year</p>
+        </div>
+        <div class="seasonal-grid">
+            <div class="seasonal-card reveal-up">
+                <div class="seasonal-image" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=800&fit=crop&q=80')"></div>
+                <div class="seasonal-content">
+                    <div class="seasonal-tag">Summer</div>
+                    <h3>BBQ & Grill Feast</h3>
+                    <p>Perfect grilled dishes for your outdoor gatherings and summer parties</p>
+                    <a href="recipes.html" class="btn-link">View Collection <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="seasonal-card reveal-up">
+                <div class="seasonal-image" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=800&fit=crop&q=80')"></div>
+                <div class="seasonal-content">
+                    <div class="seasonal-tag">Anytime</div>
+                    <h3>Cozy Warm Drinks</h3>
+                    <p>Comforting beverages perfect for winding down or energizing your morning</p>
+                    <a href="recipes.html" class="btn-link">View Collection <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="seasonal-card reveal-up">
+                <div class="seasonal-image" style="background-image: url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=1200&h=800&fit=crop&q=80')"></div>
+                <div class="seasonal-content">
+                    <div class="seasonal-tag">Weekend</div>
+                    <h3>Brunch Favorites</h3>
+                    <p>Start your weekend with these beautiful and delicious brunch recipes</p>
+                    <a href="recipes.html" class="btn-link">View Collection <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header reveal-up">
+            <span class="section-tag"><i class="fas fa-heart"></i> Community Love</span>
+            <h2>What Our Community Says</h2>
+            <p>Join thousands of home cooks already on this journey</p>
+        </div>
+        <div class="testimonial-track-wrapper">
+            <div class="testimonial-track" id="testimonial-track">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The Pad Thai recipe was absolutely incredible! It tasted just like what I had in Bangkok. Clear instructions and amazing results."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J.">
+                        <div>
+                            <h4>Sarah J.</h4>
+                            <span>Home Cook</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"I've explored so many cuisines I never thought I could make at home. The cookbook feature helps me organize all my favorites perfectly."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T.">
+                        <div>
+                            <h4>Michael T.</h4>
+                            <span>Food Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"As someone who loves to travel through food, this site is a game-changer. The authentic recipes transport me to different countries with every bite."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K.">
+                        <div>
+                            <h4>Priya K.</h4>
+                            <span>Travel Blogger</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"My family dinners have completely transformed since I found this site. Every weekend we try a new recipe from a different country!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David R.">
+                        <div>
+                            <h4>David R.</h4>
+                            <span>Father of 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta">
+        <div class="newsletter-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="newsletter-inner reveal-up">
+            <div class="newsletter-text">
+                <h2>Join Our Culinary Journey</h2>
+                <p>Get weekly recipes, cooking tips, and exclusive content delivered straight to your inbox</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Enter your email address" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-magnetic">
+                        <span>Subscribe</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div class="newsletter-perks">
+                    <span><i class="fas fa-check-circle"></i> Free weekly recipes</span>
+                    <span><i class="fas fa-check-circle"></i> Cooking tips</span>
+                    <span><i class="fas fa-check-circle"></i> No spam, ever</span>
+                </div>
+            </div>
+            <div class="newsletter-visual">
+                <div class="newsletter-image-stack">
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=750&fit=crop&q=80" alt="Delicious pasta" class="stack-img stack-1">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&h=750&fit=crop&q=80" alt="Fresh salmon dish" class="stack-img stack-2">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=750&fit=crop&q=80" alt="Breakfast toast" class="stack-img stack-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C480,100 960,0 1440,40 L1440,0 L0,0 Z" fill="var(--bg-color)"/>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo-link">
+                        <i class="fas fa-utensils"></i>
+                        <span>Cooking With Jay</span>
+                    </a>
+                    <p>Bringing the world's flavors to your kitchen, one recipe at a time.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="recipes.html">All Recipes</a></li>
+                            <li><a href="cuisines.html">By Cuisine</a></li>
+                            <li><a href="cookbook.html">My Cookbook</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cooking With Jay &mdash; By Jemima Manwana. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+        <svg class="progress-ring" width="48" height="48">
+            <circle class="progress-ring-circle" cx="24" cy="24" r="20" stroke-width="2" fill="none"/>
+        </svg>
+    </button>
+
+    <!-- Toast -->
+    <div class="toast" id="recipe-toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Recipe saved to your cookbook!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

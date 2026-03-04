@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Cooking with Jay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cooking with Jay</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="cuisines.html" class="nav-link">Cuisines</a></li>
+                <li class="nav-item"><a href="cookbook.html" class="nav-link">My Cookbook</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <header class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you! Reach out with questions, feedback, or partnership opportunities.</p>
+            <div class="contact-hero-buttons">
+                <a href="#contact-form" class="btn btn-primary">Send a Message</a>
+                <a href="#contact-info" class="btn btn-secondary">Contact Info</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="section-header">
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form below and we'll get back to you as soon as possible</p>
+        </div>
+        
+        <div class="contact-form-container">
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject*</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="recipe">Recipe Question</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="press">Press Inquiry</option>
+                        <option value="feedback">Website Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message*</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to our newsletter for recipes and cooking tips</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            
+            <div class="form-image">
+                <img src="founderCooking.jpg" alt="Chef preparing food">
+                <div class="image-overlay"></div>
+                <div class="form-image-content">
+                    <h3>We're Here to Help</h3>
+                    <p>Our team typically responds within 24-48 hours. For urgent matters, please call our support line.</p>
+                    <div class="support-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section" id="contact-info">
+        <div class="section-header">
+            <h2>Our Contact Information</h2>
+            <p>Multiple ways to reach the Cooking with Jay team</p>
+        </div>
+        
+        <div class="contact-info-grid">
+            <div class="contact-info-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>General Inquiries</p>
+                <a href="mailto:hello@globalgourmet.com">hello@globalgourmet.com</a>
+                <p>Support</p>
+                <a href="mailto:support@globalgourmet.com">support@globalgourmet.com</a>
+            </div>
+            
+            <div class="contact-info-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>Customer Support</p>
+                <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                <p>Business Hours</p>
+                <span>Mon-Fri: 9am-5pm EST</span>
+            </div>
+            
+            <div class="contact-info-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p>Cooking with Jay Headquarters</p>
+                <address>
+                    123 Culinary Way<br>
+                    Foodie City, FC 10001<br>
+                    United States
+                </address>
+                <a href="#" class="btn btn-secondary">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common questions</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    How can I submit my own recipe to Cooking with Jay?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We love featuring community recipes! Please email your recipe to submissions@globalgourmet.com with the following information:</p>
+                    <ul>
+                        <li>Complete ingredient list with measurements</li>
+                        <li>Step-by-step preparation instructions</li>
+                        <li>High-quality photos (minimum 1200px wide)</li>
+                        <li>Information about the recipe's cultural origins</li>
+                    </ul>
+                    <p>Our editorial team will review your submission and get back to you within 2-3 weeks.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer cooking classes or workshops?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We offer both virtual and in-person cooking experiences:</p>
+                    <ul>
+                        <li><strong>Monthly Virtual Classes:</strong> Live interactive classes focusing on different cuisines ($25 per session)</li>
+                        <li><strong>In-Person Workshops:</strong> Held at our NYC test kitchen (check schedule for upcoming dates)</li>
+                        <li><strong>Private Group Events:</strong> Custom experiences for teams or special occasions</li>
+                    </ul>
+                    <p>Sign up for our newsletter to receive announcements about new classes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do I report an error in a recipe?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We appreciate your help in maintaining recipe accuracy. To report an issue:</p>
+                    <ol>
+                        <li>Navigate to the recipe page with the error</li>
+                        <li>Click the "Report Error" button below the recipe instructions</li>
+                        <li>Describe the issue in detail (ingredient amount, step clarification, etc.)</li>
+                    </ol>
+                    <p>Our test kitchen will review the report and make corrections if needed. You'll receive an email when the update is complete.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Are your recipes suitable for specific dietary needs?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer recipes for various dietary preferences:</p>
+                    <ul>
+                        <li>Use our <a href="recipes.html">recipe filters</a> to find vegetarian, vegan, gluten-free, or dairy-free options</li>
+                        <li>Each recipe includes dietary tags when applicable</li>
+                        <li>Many recipes include substitution suggestions for different dietary needs</li>
+                    </ul>
+                    <p>For severe allergies, please review ingredient lists carefully as we prepare recipes in a kitchen that handles all allergens.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I use your recipes and photos on my blog or website?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Our content usage policy is as follows:</p>
+                    <ul>
+                        <li><strong>Personal Use:</strong> You may adapt recipes for home cooking without permission</li>
+                        <li><strong>Online Sharing:</strong> You may share one photo with clear credit and link back to the original recipe</li>
+                        <li><strong>Republishing:</strong> Full recipes cannot be republished without written permission</li>
+                        <li><strong>Commercial Use:</strong> Requires licensing agreement</li>
+                    </ul>
+                    <p>For all usage questions, please contact our editorial team at content@globalgourmet.com.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-cta">
+            <p>Didn't find what you were looking for?</p>
+            <a href="#contact-form" class="btn btn-primary">Ask Your Question</a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="contact-newsletter">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Join Our Culinary Community</h2>
+                <p>Subscribe to receive weekly recipes, cooking tips, and exclusive content</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+            <div class="newsletter-image">
+                <img src="team.jpg" alt="Cooking ingredients">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Success Modal -->
+    <div class="modal" id="contact-modal">
+        <div class="modal-content contact-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for contacting Cooking with Jay. We've received your message and will respond within 24-48 hours.</p>
+            <p>In the meantime, why not explore some <a href="recipes.html">new recipes</a>?</p>
+            <button class="btn btn-primary" id="modal-close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

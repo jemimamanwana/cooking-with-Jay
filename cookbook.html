@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cookbook | Cooking with Jay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cooking with Jay</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="cuisines.html" class="nav-link">Cuisines</a></li>
+                <li class="nav-item"><a href="cookbook.html" class="nav-link active">My Cookbook</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cookbook Hero -->
+    <header class="cookbook-hero">
+        <div class="cookbook-hero-overlay"></div>
+        <div class="cookbook-hero-content">
+            <h1>My Cookbook</h1>
+            <p>Your personal collection of favorite recipes from around the world</p>
+            <div class="cookbook-hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number" id="recipe-count">0</span>
+                    <span class="hero-stat-label">Saved Recipes</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" id="cuisine-count">0</span>
+                    <span class="hero-stat-label">Cuisines</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" id="total-time">0</span>
+                    <span class="hero-stat-label">Hours of Cooking</span>
+                </div>
+            </div>
+            <a href="recipes.html" class="btn btn-primary cookbook-hero-btn"><i class="fas fa-plus"></i> Add More Recipes</a>
+        </div>
+    </header>
+
+    <!-- Cookbook Filters -->
+    <section class="cookbook-filters">
+        <div class="filter-group">
+            <label for="cuisine-filter">Cuisine</label>
+            <select id="cuisine-filter" class="filter-select">
+                <option value="all">All Cuisines</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="thai">Thai</option>
+                <option value="japanese">Japanese</option>
+                <option value="french">French</option>
+                <option value="indian">Indian</option>
+                <option value="korean">Korean</option>
+                <option value="american">American</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="difficulty-filter">Difficulty</label>
+            <select id="difficulty-filter" class="filter-select">
+                <option value="all">All Levels</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="time-filter">Time</label>
+            <select id="time-filter" class="filter-select">
+                <option value="all">Any Time</option>
+                <option value="30">Under 30 mins</option>
+                <option value="60">Under 1 hour</option>
+                <option value="90">Under 1.5 hours</option>
+            </select>
+        </div>
+        <button id="clear-filters" class="btn btn-secondary">Clear All</button>
+    </section>
+
+    <!-- Cookbook Recipes -->
+    <section class="cookbook-recipes">
+        <div class="cookbook-section-header">
+            <h2><i class="fas fa-bookmark"></i> Saved Recipes</h2>
+            <span class="recipe-result-count" id="result-count"></span>
+        </div>
+        <div class="recipe-grid" id="recipe-grid">
+            <!-- Recipes will be dynamically inserted here -->
+        </div>
+
+        <div class="empty-cookbook" id="empty-cookbook">
+            <div class="empty-content">
+                <div class="empty-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Your Cookbook is Empty</h3>
+                <p>Start building your personal recipe collection by saving recipes you love</p>
+                <a href="recipes.html" class="btn btn-primary">Browse Recipes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookbook Categories -->
+    <section class="cookbook-categories">
+        <div class="section-header">
+            <h2>Recipe Collections</h2>
+            <p>Organize your saved recipes into custom collections</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card" style="background-image: url('Breakfast.webp')">
+                <div class="category-overlay"></div>
+                <div class="category-card-content">
+                    <span class="category-icon"><i class="fas fa-sun"></i></span>
+                    <h3>Breakfast</h3>
+                    <span class="category-count">5 recipes</span>
+                </div>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+
+            <div class="category-card" style="background-image: url('food.jpg')">
+                <div class="category-overlay"></div>
+                <div class="category-card-content">
+                    <span class="category-icon"><i class="fas fa-moon"></i></span>
+                    <h3>Dinner</h3>
+                    <span class="category-count">4 recipes</span>
+                </div>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+
+            <div class="category-card" style="background-image: url('cake4.webp')">
+                <div class="category-overlay"></div>
+                <div class="category-card-content">
+                    <span class="category-icon"><i class="fas fa-birthday-cake"></i></span>
+                    <h3>Desserts</h3>
+                    <span class="category-count">3 recipes</span>
+                </div>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+
+            <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop')">
+                <div class="category-overlay"></div>
+                <div class="category-card-content">
+                    <span class="category-icon"><i class="fas fa-fire"></i></span>
+                    <h3>BBQ & Grills</h3>
+                    <span class="category-count">2 recipes</span>
+                </div>
+                <button class="category-edit"><i class="fas fa-edit"></i></button>
+            </div>
+
+            <div class="category-card add-category">
+                <div class="add-category-inner">
+                    <span class="add-icon"><i class="fas fa-plus"></i></span>
+                    <h3>New Collection</h3>
+                    <p>Create a custom group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed">
+        <div class="section-header">
+            <h2>Recently Viewed</h2>
+            <p>Jump back into recipes you were looking at</p>
+        </div>
+        <div class="recently-viewed-grid" id="recently-viewed-grid">
+            <!-- Filled by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Category Modal -->
+    <div class="modal" id="add-category-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Create New Collection</h2>
+            <form id="category-form">
+                <div class="form-group">
+                    <label for="category-name">Collection Name</label>
+                    <input type="text" id="category-name" placeholder="e.g. Weeknight Dinners" required>
+                </div>
+                <div class="form-group">
+                    <label>Choose a Cover</label>
+                    <div class="image-options">
+                        <div class="image-option selected" data-image="breakfast">
+                            <img src="Breakfast.webp" alt="Breakfast">
+                            <span>Breakfast</span>
+                        </div>
+                        <div class="image-option" data-image="lunch">
+                            <img src="spaggeti.webp" alt="Lunch">
+                            <span>Pasta</span>
+                        </div>
+                        <div class="image-option" data-image="dinner">
+                            <img src="food.jpg" alt="Dinner">
+                            <span>Dinner</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Collection</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content recipe-detail-content">
+            <button class="modal-close">&times;</button>
+            <div class="recipe-detail-hero" id="modal-recipe-image">
+                <div class="recipe-detail-hero-overlay"></div>
+                <div class="recipe-detail-hero-info">
+                    <div class="recipe-detail-tag" id="modal-recipe-cuisine">Italian</div>
+                    <h1 id="modal-recipe-title">Recipe Title</h1>
+                    <div class="recipe-detail-meta">
+                        <span><i class="fas fa-clock"></i> <span id="modal-recipe-time">30 mins</span></span>
+                        <span><i class="fas fa-utensils"></i> <span id="modal-recipe-difficulty">Easy</span></span>
+                        <span><i class="fas fa-star"></i> <span id="modal-recipe-rating">4.5</span></span>
+                        <span><i class="fas fa-comment"></i> <span id="modal-recipe-reviews">128</span> reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-detail-body">
+                <div class="recipe-detail-columns">
+                    <div class="recipe-detail-ingredients">
+                        <h3><i class="fas fa-list"></i> Ingredients</h3>
+                        <ul id="modal-recipe-ingredients"></ul>
+                    </div>
+                    <div class="recipe-detail-instructions">
+                        <h3><i class="fas fa-clipboard-list"></i> Instructions</h3>
+                        <ol id="modal-recipe-instructions"></ol>
+                    </div>
+                </div>
+                <div class="recipe-detail-actions">
+                    <button class="btn btn-secondary" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+                    <button class="btn btn-danger" id="modal-remove-btn"><i class="fas fa-trash-alt"></i> Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="cookbook.js"></script>
+</body>
+</html>

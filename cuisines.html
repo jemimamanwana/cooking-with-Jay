@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cuisines | Cooking with Jay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+            <div class="spinner-circle"></div>
+        </div>
+    </div>
+
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Cooking with Jay</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="cuisines.html" class="nav-link active">Cuisines</a></li>
+                <li class="nav-item"><a href="cookbook.html" class="nav-link">My Cookbook</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item search-item">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search cuisines..." class="search-input" id="cuisine-search">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cuisines Hero Section -->
+    <header class="cuisines-hero">
+        <div class="cuisines-hero-content">
+            <h1>Explore World Cuisines</h1>
+            <p>Discover culinary traditions from every corner of the globe</p>
+            <div class="cuisines-hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <span id="total-cuisines">24</span> Cuisines
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-utensils"></i>
+                    <span id="total-recipes">128</span> Recipes
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-flag"></i>
+                    <span id="total-countries">42</span> Countries
+                </div>
+            </div>
+        </div>
+        <div class="world-map">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map">
+            <div class="map-marker" style="top: 30%; left: 75%;" data-cuisine="japanese">
+                <div class="marker-dot"></div>
+                <div class="marker-label">Japan</div>
+            </div>
+            <div class="map-marker" style="top: 35%; left: 50%;" data-cuisine="italian">
+                <div class="marker-dot"></div>
+                <div class="marker-label">Italy</div>
+            </div>
+            <div class="map-marker" style="top: 40%; left: 20%;" data-cuisine="mexican">
+                <div class="marker-dot"></div>
+                <div class="marker-label">Mexico</div>
+            </div>
+            <div class="map-marker" style="top: 30%; left: 65%;" data-cuisine="thai">
+                <div class="marker-dot"></div>
+                <div class="marker-label">Thailand</div>
+            </div>
+            <div class="map-marker" style="top: 55%; left: 70%;" data-cuisine="indian">
+                <div class="marker-dot"></div>
+                <div class="marker-label">India</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuisines Filter -->
+    <section class="cuisines-filter">
+        <div class="filter-group">
+            <label for="region-filter">Filter by Region:</label>
+            <select id="region-filter" class="filter-select">
+                <option value="all">All Regions</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="africa">Africa</option>
+                <option value="americas">Americas</option>
+                <option value="middle-east">Middle East</option>
+                <option value="oceania">Oceania</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="popularity-filter">Sort by:</label>
+            <select id="popularity-filter" class="filter-select">
+                <option value="popular">Most Popular</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+                <option value="recipes">Number of Recipes</option>
+            </select>
+        </div>
+        <button id="reset-cuisine-filters" class="btn btn-secondary">Reset</button>
+    </section>
+
+    <!-- Cuisines Grid -->
+    <section class="cuisines-grid-section">
+        <div class="section-header">
+            <h2>Featured Cuisines</h2>
+            <p>Explore our collection of world culinary traditions</p>
+        </div>
+        
+        <div class="cuisines-grid" id="cuisines-grid">
+            <!-- Cuisines will be loaded here dynamically -->
+        </div>
+        
+        <div class="loading-spinner" id="cuisines-loading">
+            <div class="spinner"></div>
+            <p>Loading world cuisines...</p>
+        </div>
+        
+        <div class="no-results" id="cuisines-no-results">
+            <i class="fas fa-globe-americas"></i>
+            <h3>No Cuisines Found</h3>
+            <p>Try adjusting your filters or search term</p>
+            <button id="reset-cuisine-filters-btn" class="btn btn-primary">Reset Filters</button>
+        </div>
+    </section>
+
+    <!-- Cuisine Spotlight -->
+    <section class="cuisine-spotlight">
+        <div class="section-header">
+            <h2>Cuisine Spotlight</h2>
+            <p>Deep dive into this month's featured culinary tradition</p>
+        </div>
+        <div class="spotlight-container">
+            <div class="spotlight-image" id="spotlight-image"></div>
+            <div class="spotlight-content">
+                <div class="spotlight-header">
+                    <h3 id="spotlight-title">Italian Cuisine</h3>
+                    <div class="spotlight-region">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="spotlight-region">Europe</span>
+                    </div>
+                </div>
+                <div class="spotlight-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-utensils"></i>
+                        <span id="spotlight-recipes">32</span> Recipes
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span id="spotlight-rating">4.8</span> Avg Rating
+                    </div>
+                </div>
+                <div class="spotlight-description" id="spotlight-description">
+                    Italian cuisine is characterized by its simplicity, with many dishes having only four to eight ingredients. Italian cooks rely chiefly on the quality of the ingredients rather than on elaborate preparation. Ingredients and dishes vary by region. Many dishes that were once regional have proliferated with variations throughout the country.
+                </div>
+                <div class="spotlight-signature">
+                    <h4>Signature Dishes</h4>
+                    <div class="signature-dishes" id="signature-dishes">
+                        <!-- Dishes will be added here -->
+                    </div>
+                </div>
+                <div class="spotlight-actions">
+                    <a href="recipes.html?cuisine=italian" class="btn btn-primary">View All Recipes</a>
+                    <button class="btn btn-secondary" id="explore-techniques">
+                        <i class="fas fa-mortar-pestle"></i> Cooking Techniques
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Cuisines -->
+    <section class="regional-cuisines">
+        <div class="section-header">
+            <h2>Explore by Region</h2>
+            <p>Discover culinary traditions organized by geographic region</p>
+        </div>
+        <div class="regions-grid">
+            <div class="region-card" data-region="asia">
+                <div class="region-image" style="background-image: url('sushi.jpeg')">
+                    <div class="region-overlay"></div>
+                    <h3>Asian Cuisines</h3>
+                </div>
+                <div class="region-stats">
+                    <span>5 Cuisines</span>
+                    <span>110 Recipes</span>
+                    <a href="#" class="btn btn-region">Explore</a>
+                </div>
+            </div>
+            <div class="region-card" data-region="europe">
+                <div class="region-image" style="background-image: url('pizza.jpg')">
+                    <div class="region-overlay"></div>
+                    <h3>European Cuisines</h3>
+                </div>
+                <div class="region-stats">
+                    <span>4 Cuisines</span>
+                    <span>100 Recipes</span>
+                    <a href="#" class="btn btn-region">Explore</a>
+                </div>
+            </div>
+            <div class="region-card" data-region="africa">
+                <div class="region-image" style="background-image: url('https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=800&h=600&fit=crop')">
+                    <div class="region-overlay"></div>
+                    <h3>African Cuisines</h3>
+                </div>
+                <div class="region-stats">
+                    <span>2 Cuisines</span>
+                    <span>30 Recipes</span>
+                    <a href="#" class="btn btn-region">Explore</a>
+                </div>
+            </div>
+            <div class="region-card" data-region="americas">
+                <div class="region-image" style="background-image: url('chickenTacos.jpg')">
+                    <div class="region-overlay"></div>
+                    <h3>American Cuisines</h3>
+                </div>
+                <div class="region-stats">
+                    <span>1 Cuisine</span>
+                    <span>25 Recipes</span>
+                    <a href="#" class="btn btn-region">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Techniques Modal -->
+    <div class="modal" id="techniques-modal">
+        <div class="modal-content techniques-content">
+            <button class="modal-close">&times;</button>
+            <h2 id="techniques-cuisine">Italian Cooking Techniques</h2>
+            <div class="techniques-grid" id="techniques-grid">
+                <!-- Techniques will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cooking With Jay</span>
+                </a>
+                <p>Bringing the world's flavors to your kitchen</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="recipes.html">All Recipes</a></li>
+                        <li><a href="cuisines.html">By Cuisine</a></li>
+                        <li><a href="cookbook.html">My Cookbook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Cooking With Jay<br>By Jemima Manwana. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="cuisines.js"></script>
+</body>
+</html>
